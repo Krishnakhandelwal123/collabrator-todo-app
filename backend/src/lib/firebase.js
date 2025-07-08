@@ -3,7 +3,7 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
 try {
-  const serviceAccount = require(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+  const serviceAccount = require('./serviceAccountKey.json');
 
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
@@ -12,5 +12,5 @@ try {
 } catch (error) {
   console.error("Firebase Admin SDK initialization error:", error);
 }
- 
+
 export default admin;  
