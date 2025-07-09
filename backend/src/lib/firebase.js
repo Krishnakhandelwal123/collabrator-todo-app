@@ -3,7 +3,7 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
 try {
-  const serviceAccount = require('E:/major mern projects/collabrator todo app/backend/src/lib/serviceAccountKey.json');
+  const serviceAccount = require('/etc/secrets/serviceAccountKey.json');
 
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
